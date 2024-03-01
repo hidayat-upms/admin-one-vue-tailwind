@@ -15,8 +15,10 @@ darkModeStore.set(false)
 const router = useRouter()
 
 const handleStyleChange = (slug) => {
+  console.log(document.documentElement, document.documentElement.classList)
   document.documentElement.classList.forEach((token) => {
     if (token.indexOf('style') === 0) {
+      console.log(token)
       document.documentElement.classList.replace(token, `style-${slug}`)
     }
   })
